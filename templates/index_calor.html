@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Aplicativo</title>
+
+    <script>
+        function formatarCampo(campo) {
+            // Remove caracteres não numéricos
+            var valor = campo.value.replace(/\D/g, '');
+
+            // Adiciona o formato desejado
+            if (valor.length === 8) {
+                campo.value = valor.substring(0, 4) + '-' + valor.substring(4, 6) + '-' + valor.substring(6, 8);
+            } else if (valor.length === 6) {
+                campo.value = valor.substring(0, 2) + ':' + valor.substring(2, 4) + ':' + valor.substring(4, 6);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Seu Aplicativo</h1>
+    
+    <form action="{{ url_for('obter_dados_formulario') }}" method="post">
+        <label for="data_inicial">Data Inicial (YYYY-DD-MM):</label>
+        <input type="text" id="data_inicial" name="data_inicial" pattern="\d{4}-\d{2}-\d{2}" oninput="formatarCampo(this)" required>
+        <br>
+        
+        <label for="hora_inicial">Hora Inicial (HH:MM:SS):</label>
+        <input type="text" id="hora_inicial" name="hora_inicial" pattern="\d{2}:\d{2}:\d{2}" oninput="formatarCampo(this)" required>
+        <br>
+        
+        <label for="data_final">Data Final (YYYY-DD-MM):</label>
+        <input type="text" id="data_final" name="data_final" pattern="\d{4}-\d{2}-\d{2}" oninput="formatarCampo(this)" required>
+        <br>
+        
+        <label for="hora_final">Hora Final (HH:MM:SS):</label>
+        <input type="text" id="hora_final" name="hora_final" pattern="\d{2}:\d{2}:\d{2}" oninput="formatarCampo(this)" required>
+        <br>
+        
+        <input type="submit" value="Gerar mapa calor">
+    </form>
+</body>
+</html>

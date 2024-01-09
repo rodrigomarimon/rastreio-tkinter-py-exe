@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_27bf496319ae51166bbd8b02a7ab631f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_27bf496319ae51166bbd8b02a7ab631f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_27bf496319ae51166bbd8b02a7ab631f = L.map(
+                "map_27bf496319ae51166bbd8b02a7ab631f",
+                {
+                    center: [-25.430078, -49.213471],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d1eebf01f4b6314940233adafae2c4c5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d1eebf01f4b6314940233adafae2c4c5.addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+            var heat_map_e0f09ccf5477f0646fb5958c2f9db69e = L.heatLayer(
+                [[-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.430078, -49.213471], [-25.467181, -49.253057], [-25.473423, -49.25776], [-25.574555, -49.411996], [-25.574555, -49.411996], [-25.574555, -49.411996], [-25.574557, -49.412011], [-25.554491, -49.408459], [-25.554491, -49.408459], [-25.554491, -49.408459], [-25.554491, -49.408459], [-25.554527, -49.408486], [-25.554454, -49.408449], [-25.554503, -49.408457], [-25.554479, -49.408493], [-25.554468, -49.408495], [-25.554459, -49.408482], [-25.554459, -49.408482], [-25.55577, -49.332581], [-25.555756, -49.332548], [-25.555756, -49.332548], [-25.555756, -49.332548], [-25.555756, -49.332548], [-25.555858, -49.332291], [-25.555858, -49.332291], [-25.555858, -49.332291], [-25.555873, -49.332217], [-25.606545, -49.319128], [-25.606545, -49.319128], [-25.606545, -49.319128], [-25.606541, -49.319132], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.606594, -49.319004], [-25.670888, -49.321774], [-25.670888, -49.321774], [-25.670888, -49.321774], [-25.670888, -49.321774], [-25.670888, -49.321774], [-25.670948, -49.321842], [-25.670948, -49.321842], [-25.670762, -49.321725], [-24.786124, -48.174807], [-24.786116, -48.174818], [-24.786114, -48.174814], [-24.28634, -47.443232], [-24.28634, -47.443232], [-24.28634, -47.443232], [-24.286406, -47.443193], [-23.611311, -46.950406], [-23.611311, -46.950406], [-23.611311, -46.950406], [-23.611114, -46.950364], [-23.611114, -46.950364], [-23.610993, -46.950346], [-23.610993, -46.950346], [-23.611305, -46.950391], [-23.611305, -46.950391]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            );
+        
+    
+            heat_map_e0f09ccf5477f0646fb5958c2f9db69e.addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+            var marker_20e4cd83ea226a27464a943ccd71b2d9 = L.marker(
+                [-25.430078, -49.213471],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_3785f623947c128162d7cfa90d27c3b7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9d07035b16f7eab71e78375f8d3c47fc = $(`<div id="html_9d07035b16f7eab71e78375f8d3c47fc" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 18:06:33 - Velocidade: 0 km/h - LatLong: [-25.430078, -49.213471]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.430078,-49.213471' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_3785f623947c128162d7cfa90d27c3b7.setContent(html_9d07035b16f7eab71e78375f8d3c47fc);
+            
+        
+
+        marker_20e4cd83ea226a27464a943ccd71b2d9.bindPopup(popup_3785f623947c128162d7cfa90d27c3b7)
+        ;
+
+        
+    
+    
+            var marker_5b58941e74fdfe11a41620cc3c821ad5 = L.marker(
+                [-25.430078, -49.213471],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_8888d3b874866dda3ba3d047d05b691d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b2d76595520d239a34205fac652ea045 = $(`<div id="html_b2d76595520d239a34205fac652ea045" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 18:36:36 - Velocidade: 0 km/h - LatLong: [-25.430078, -49.213471]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.430078,-49.213471' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_8888d3b874866dda3ba3d047d05b691d.setContent(html_b2d76595520d239a34205fac652ea045);
+            
+        
+
+        marker_5b58941e74fdfe11a41620cc3c821ad5.bindPopup(popup_8888d3b874866dda3ba3d047d05b691d)
+        ;
+
+        
+    
+    
+            var marker_f945171e26bd05395c5539873321bdd9 = L.marker(
+                [-25.430078, -49.213471],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e68c51b1951a1f57017fdce507ba92b7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4481a8f8925e98cbbb6e13170202ae30 = $(`<div id="html_4481a8f8925e98cbbb6e13170202ae30" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:06:39 - Velocidade: 0 km/h - LatLong: [-25.430078, -49.213471]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.430078,-49.213471' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e68c51b1951a1f57017fdce507ba92b7.setContent(html_4481a8f8925e98cbbb6e13170202ae30);
+            
+        
+
+        marker_f945171e26bd05395c5539873321bdd9.bindPopup(popup_e68c51b1951a1f57017fdce507ba92b7)
+        ;
+
+        
+    
+    
+            var marker_b9ff7af4447256cdb2594ac178795ce3 = L.marker(
+                [-25.430078, -49.213471],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_407a4e96d0e80873d29419f3dafca6ed = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_15894cce8eeb827fe75f5ec1372c12da = $(`<div id="html_15894cce8eeb827fe75f5ec1372c12da" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:28:31 - Velocidade: 0 km/h - LatLong: [-25.430078, -49.213471]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.430078,-49.213471' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_407a4e96d0e80873d29419f3dafca6ed.setContent(html_15894cce8eeb827fe75f5ec1372c12da);
+            
+        
+
+        marker_b9ff7af4447256cdb2594ac178795ce3.bindPopup(popup_407a4e96d0e80873d29419f3dafca6ed)
+        ;
+
+        
+    
+    
+            var marker_75cf482d78a1422b7210f5b6d049ae13 = L.marker(
+                [-25.430078, -49.213471],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_3b179451529beef6a2e6474cbd9bdc8b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0aab17b534b752dfe4af91303564b91e = $(`<div id="html_0aab17b534b752dfe4af91303564b91e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:34:29 - Velocidade: 0 km/h - LatLong: [-25.430078, -49.213471]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.430078,-49.213471' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_3b179451529beef6a2e6474cbd9bdc8b.setContent(html_0aab17b534b752dfe4af91303564b91e);
+            
+        
+
+        marker_75cf482d78a1422b7210f5b6d049ae13.bindPopup(popup_3b179451529beef6a2e6474cbd9bdc8b)
+        ;
+
+        
+    
+    
+            var marker_94d1defe2c3a78a18a2b8c9fd9f632ce = L.marker(
+                [-25.429021, -49.223366],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_51da25eeddd0d4fb6f6e9a6be456f6e7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d1d15cfee3566e0c184dcacff130d65b = $(`<div id="html_d1d15cfee3566e0c184dcacff130d65b" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:38:34 - Velocidade: 50 km/h - LatLong: [-25.429021, -49.223366]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.429021,-49.223366' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_51da25eeddd0d4fb6f6e9a6be456f6e7.setContent(html_d1d15cfee3566e0c184dcacff130d65b);
+            
+        
+
+        marker_94d1defe2c3a78a18a2b8c9fd9f632ce.bindPopup(popup_51da25eeddd0d4fb6f6e9a6be456f6e7)
+        ;
+
+        
+    
+    
+            var marker_7b2ddcff6a60209ec1c06ea3a0d40fa3 = L.marker(
+                [-25.435851, -49.234051],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_44c272aab3cc2972bae033338a437620 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44d0d5d9c692251f7495e7c97b1004ef = $(`<div id="html_44d0d5d9c692251f7495e7c97b1004ef" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:42:35 - Velocidade: 51 km/h - LatLong: [-25.435851, -49.234051]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.435851,-49.234051' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_44c272aab3cc2972bae033338a437620.setContent(html_44d0d5d9c692251f7495e7c97b1004ef);
+            
+        
+
+        marker_7b2ddcff6a60209ec1c06ea3a0d40fa3.bindPopup(popup_44c272aab3cc2972bae033338a437620)
+        ;
+
+        
+    
+    
+            var marker_bc152dbe062040eca681e9316c694989 = L.marker(
+                [-25.467181, -49.253057],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_d9dceb2954788c5f52a7da3fe269756d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e2d47cd1ed0eb82289cce9d1bd6c5f7 = $(`<div id="html_6e2d47cd1ed0eb82289cce9d1bd6c5f7" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:48:16 - Velocidade: 0 km/h - LatLong: [-25.467181, -49.253057]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.467181,-49.253057' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_d9dceb2954788c5f52a7da3fe269756d.setContent(html_6e2d47cd1ed0eb82289cce9d1bd6c5f7);
+            
+        
+
+        marker_bc152dbe062040eca681e9316c694989.bindPopup(popup_d9dceb2954788c5f52a7da3fe269756d)
+        ;
+
+        
+    
+    
+            var marker_47dd5c96db550bfa4ac50ea367264ef2 = L.marker(
+                [-25.483344, -49.265405],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_13c7b1f7fdf56e2171424d32f63317dc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c4f768578ebc0b035bf7ec300212fd1c = $(`<div id="html_c4f768578ebc0b035bf7ec300212fd1c" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:52:16 - Velocidade: 23 km/h - LatLong: [-25.483344, -49.265405]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.483344,-49.265405' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_13c7b1f7fdf56e2171424d32f63317dc.setContent(html_c4f768578ebc0b035bf7ec300212fd1c);
+            
+        
+
+        marker_47dd5c96db550bfa4ac50ea367264ef2.bindPopup(popup_13c7b1f7fdf56e2171424d32f63317dc)
+        ;
+
+        
+    
+    
+            var marker_571919afb21c58c5d9a6a310b4d0e9ae = L.marker(
+                [-25.504687, -49.28282],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_2c0cbbb4722a8f9c1a4fc3150019016c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_604d500368931e81037dc426731f5a0f = $(`<div id="html_604d500368931e81037dc426731f5a0f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 19:56:16 - Velocidade: 48 km/h - LatLong: [-25.504687, -49.28282]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.504687,-49.28282' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_2c0cbbb4722a8f9c1a4fc3150019016c.setContent(html_604d500368931e81037dc426731f5a0f);
+            
+        
+
+        marker_571919afb21c58c5d9a6a310b4d0e9ae.bindPopup(popup_2c0cbbb4722a8f9c1a4fc3150019016c)
+        ;
+
+        
+    
+    
+            var marker_3998e328000690c381cdcf8778ba3fdc = L.marker(
+                [-25.522237, -49.295046],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_a7e99904bfd2578af70e098fa7622fa5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0a87593361ba81965c2921c585ad64dd = $(`<div id="html_0a87593361ba81965c2921c585ad64dd" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:00:16 - Velocidade: 45 km/h - LatLong: [-25.522237, -49.295046]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.522237,-49.295046' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_a7e99904bfd2578af70e098fa7622fa5.setContent(html_0a87593361ba81965c2921c585ad64dd);
+            
+        
+
+        marker_3998e328000690c381cdcf8778ba3fdc.bindPopup(popup_a7e99904bfd2578af70e098fa7622fa5)
+        ;
+
+        
+    
+    
+            var marker_858bec82ed76fb067eb7a85cf369b21c = L.marker(
+                [-25.542394, -49.308952],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_218d709b045bef0d273e434374176654 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_85d874e4a2c6a739abbce761380ddd14 = $(`<div id="html_85d874e4a2c6a739abbce761380ddd14" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:04:20 - Velocidade: 58 km/h - LatLong: [-25.542394, -49.308952]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.542394,-49.308952' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_218d709b045bef0d273e434374176654.setContent(html_85d874e4a2c6a739abbce761380ddd14);
+            
+        
+
+        marker_858bec82ed76fb067eb7a85cf369b21c.bindPopup(popup_218d709b045bef0d273e434374176654)
+        ;
+
+        
+    
+    
+            var marker_a69bd90aa7bb47b08d57e8528bd7b91e = L.marker(
+                [-25.557916, -49.361118],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_c4bd188c355c422cd9917d7ffc04c5f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dd667101cdaf0200bf3614363c0af572 = $(`<div id="html_dd667101cdaf0200bf3614363c0af572" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:09:59 - Velocidade: 77 km/h - LatLong: [-25.557916, -49.361118]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.557916,-49.361118' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_c4bd188c355c422cd9917d7ffc04c5f7.setContent(html_dd667101cdaf0200bf3614363c0af572);
+            
+        
+
+        marker_a69bd90aa7bb47b08d57e8528bd7b91e.bindPopup(popup_c4bd188c355c422cd9917d7ffc04c5f7)
+        ;
+
+        
+    
+    
+            var marker_cf7dae764968b33c7244333848809555 = L.marker(
+                [-25.571943, -49.397596],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_307f2ae77f6c43af6af12873a9cf16ca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_84eec5a4bb16fb855433773a2f67038d = $(`<div id="html_84eec5a4bb16fb855433773a2f67038d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:14:21 - Velocidade: 51 km/h - LatLong: [-25.571943, -49.397596]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.571943,-49.397596' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_307f2ae77f6c43af6af12873a9cf16ca.setContent(html_84eec5a4bb16fb855433773a2f67038d);
+            
+        
+
+        marker_cf7dae764968b33c7244333848809555.bindPopup(popup_307f2ae77f6c43af6af12873a9cf16ca)
+        ;
+
+        
+    
+    
+            var marker_f3b28226ab289948a0f606dad7f5fb60 = L.marker(
+                [-25.574306, -49.412054],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_dc51591ab8b372fab5a539ced1afd2de = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_445a7ad572a5d07216ee0021f4606598 = $(`<div id="html_445a7ad572a5d07216ee0021f4606598" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:19:10 - Velocidade: 6 km/h - LatLong: [-25.574306, -49.412054]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.574306,-49.412054' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_dc51591ab8b372fab5a539ced1afd2de.setContent(html_445a7ad572a5d07216ee0021f4606598);
+            
+        
+
+        marker_f3b28226ab289948a0f606dad7f5fb60.bindPopup(popup_dc51591ab8b372fab5a539ced1afd2de)
+        ;
+
+        
+    
+    
+            var marker_27c0ed2e9d85c083a5bdd6d1d44bd6ac = L.marker(
+                [-25.576281, -49.40399],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_fdaf797c2b22d8c624e54058e9717773 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7858c87f5ee58826e0aad43a94749a9 = $(`<div id="html_d7858c87f5ee58826e0aad43a94749a9" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:23:50 - Velocidade: 24 km/h - LatLong: [-25.576281, -49.40399]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.576281,-49.40399' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_fdaf797c2b22d8c624e54058e9717773.setContent(html_d7858c87f5ee58826e0aad43a94749a9);
+            
+        
+
+        marker_27c0ed2e9d85c083a5bdd6d1d44bd6ac.bindPopup(popup_fdaf797c2b22d8c624e54058e9717773)
+        ;
+
+        
+    
+    
+            var marker_91ab5e477e794f1ad6b0c02d8580afde = L.marker(
+                [-25.572795, -49.396187],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_5fa575f9e90beffbe8ea0cb321bcec81 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ea090a8a4eb019c56bdd7d3672ec245 = $(`<div id="html_1ea090a8a4eb019c56bdd7d3672ec245" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:28:12 - Velocidade: 35 km/h - LatLong: [-25.572795, -49.396187]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.572795,-49.396187' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_5fa575f9e90beffbe8ea0cb321bcec81.setContent(html_1ea090a8a4eb019c56bdd7d3672ec245);
+            
+        
+
+        marker_91ab5e477e794f1ad6b0c02d8580afde.bindPopup(popup_5fa575f9e90beffbe8ea0cb321bcec81)
+        ;
+
+        
+    
+    
+            var marker_7ad00057ff68852ca87c7627f2dab159 = L.marker(
+                [-25.557151, -49.392884],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_4794b4953c8a894ee712414951b3e300 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89acf75d0165229d3656f930ddd0fc4a = $(`<div id="html_89acf75d0165229d3656f930ddd0fc4a" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:32:36 - Velocidade: 17 km/h - LatLong: [-25.557151, -49.392884]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.557151,-49.392884' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_4794b4953c8a894ee712414951b3e300.setContent(html_89acf75d0165229d3656f930ddd0fc4a);
+            
+        
+
+        marker_7ad00057ff68852ca87c7627f2dab159.bindPopup(popup_4794b4953c8a894ee712414951b3e300)
+        ;
+
+        
+    
+    
+            var marker_89946012848b67367232f737262df1ca = L.marker(
+                [-25.553529, -49.395699],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_0f64b4fcb6773a69c9f3af88f210fc51 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e1cc1a4e3686fdbfd27d2753c57857a3 = $(`<div id="html_e1cc1a4e3686fdbfd27d2753c57857a3" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:36:50 - Velocidade: 13 km/h - LatLong: [-25.553529, -49.395699]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.553529,-49.395699' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_0f64b4fcb6773a69c9f3af88f210fc51.setContent(html_e1cc1a4e3686fdbfd27d2753c57857a3);
+            
+        
+
+        marker_89946012848b67367232f737262df1ca.bindPopup(popup_0f64b4fcb6773a69c9f3af88f210fc51)
+        ;
+
+        
+    
+    
+            var marker_59df52fd3f7e21e7629eb254554f9204 = L.marker(
+                [-25.555271, -49.408479],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_87bb4271f74a5efdf436ddb564cdb54c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_42db5d09e2e53ee06a2dcba32363576a = $(`<div id="html_42db5d09e2e53ee06a2dcba32363576a" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 20:41:39 - Velocidade: 10 km/h - LatLong: [-25.555271, -49.408479]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.555271,-49.408479' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_87bb4271f74a5efdf436ddb564cdb54c.setContent(html_42db5d09e2e53ee06a2dcba32363576a);
+            
+        
+
+        marker_59df52fd3f7e21e7629eb254554f9204.bindPopup(popup_87bb4271f74a5efdf436ddb564cdb54c)
+        ;
+
+        
+    
+    
+            var marker_4518e72b4b32e891fe2b3b1c49cf27cc = L.marker(
+                [-25.554527, -49.408486],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_127bf4cafdd04541e0badadf0510672f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07af49c97078709041a3b65ffc340c4f = $(`<div id="html_07af49c97078709041a3b65ffc340c4f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 21:14:15 - Velocidade: 0 km/h - LatLong: [-25.554527, -49.408486]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554527,-49.408486' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_127bf4cafdd04541e0badadf0510672f.setContent(html_07af49c97078709041a3b65ffc340c4f);
+            
+        
+
+        marker_4518e72b4b32e891fe2b3b1c49cf27cc.bindPopup(popup_127bf4cafdd04541e0badadf0510672f)
+        ;
+
+        
+    
+    
+            var marker_20050e765fcbd7c6a4c8bd41f0698582 = L.marker(
+                [-25.554454, -49.408449],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_eea35e38e6c6e5c010f73d5711824679 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_98f2521c2950e9db074e2933c4489116 = $(`<div id="html_98f2521c2950e9db074e2933c4489116" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 21:44:19 - Velocidade: 0 km/h - LatLong: [-25.554454, -49.408449]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554454,-49.408449' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_eea35e38e6c6e5c010f73d5711824679.setContent(html_98f2521c2950e9db074e2933c4489116);
+            
+        
+
+        marker_20050e765fcbd7c6a4c8bd41f0698582.bindPopup(popup_eea35e38e6c6e5c010f73d5711824679)
+        ;
+
+        
+    
+    
+            var marker_010c008a8db815caf3afaf3b6c8c3c37 = L.marker(
+                [-25.554503, -49.408457],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_65802171b507a01cb0ec62c67186f808 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_55464d8a9ca4b7a9e4aa4318cf7e7f6c = $(`<div id="html_55464d8a9ca4b7a9e4aa4318cf7e7f6c" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 22:14:23 - Velocidade: 0 km/h - LatLong: [-25.554503, -49.408457]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554503,-49.408457' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_65802171b507a01cb0ec62c67186f808.setContent(html_55464d8a9ca4b7a9e4aa4318cf7e7f6c);
+            
+        
+
+        marker_010c008a8db815caf3afaf3b6c8c3c37.bindPopup(popup_65802171b507a01cb0ec62c67186f808)
+        ;
+
+        
+    
+    
+            var marker_d515ebf0b6467adcff6ef9d99a916f2b = L.marker(
+                [-25.554479, -49.408493],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_fb2df3b686adcacc3abf29656792105a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c986459d9076f303517920938a27c500 = $(`<div id="html_c986459d9076f303517920938a27c500" style="width: 100.0%; height: 100.0%;">SIS9H08 - 18/12/2023 22:44:27 - Velocidade: 0 km/h - LatLong: [-25.554479, -49.408493]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554479,-49.408493' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_fb2df3b686adcacc3abf29656792105a.setContent(html_c986459d9076f303517920938a27c500);
+            
+        
+
+        marker_d515ebf0b6467adcff6ef9d99a916f2b.bindPopup(popup_fb2df3b686adcacc3abf29656792105a)
+        ;
+
+        
+    
+    
+            var marker_fbc0ec3ef4cdc5f691019afe20d0c705 = L.marker(
+                [-25.554468, -49.408495],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_3e3e1882afa82165289c8103bfe306cb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b22647ebc290b2333374d41aee5533b9 = $(`<div id="html_b22647ebc290b2333374d41aee5533b9" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 23:14:32 - Velocidade: 0 km/h - LatLong: [-25.554468, -49.408495]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554468,-49.408495' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_3e3e1882afa82165289c8103bfe306cb.setContent(html_b22647ebc290b2333374d41aee5533b9);
+            
+        
+
+        marker_fbc0ec3ef4cdc5f691019afe20d0c705.bindPopup(popup_3e3e1882afa82165289c8103bfe306cb)
+        ;
+
+        
+    
+    
+            var marker_8a581d85f55a2efad9a3a72cdefb9509 = L.marker(
+                [-25.554459, -49.408482],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_999217376cecb6c1388b434422878093 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4b74fecc6f813b549fa14cbc18d4afa1 = $(`<div id="html_4b74fecc6f813b549fa14cbc18d4afa1" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 23:42:09 - Velocidade: 0 km/h - LatLong: [-25.554459, -49.408482]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.554459,-49.408482' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_999217376cecb6c1388b434422878093.setContent(html_4b74fecc6f813b549fa14cbc18d4afa1);
+            
+        
+
+        marker_8a581d85f55a2efad9a3a72cdefb9509.bindPopup(popup_999217376cecb6c1388b434422878093)
+        ;
+
+        
+    
+    
+            var marker_68833d73615665942003c71236cd5786 = L.marker(
+                [-25.57168, -49.391523],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_2d831fd3e4ccc49686d3050c0af07313 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7b90a02e9c54500d7c54dae7e3cabe5e = $(`<div id="html_7b90a02e9c54500d7c54dae7e3cabe5e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 23:46:10 - Velocidade: 32 km/h - LatLong: [-25.57168, -49.391523]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.57168,-49.391523' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_2d831fd3e4ccc49686d3050c0af07313.setContent(html_7b90a02e9c54500d7c54dae7e3cabe5e);
+            
+        
+
+        marker_68833d73615665942003c71236cd5786.bindPopup(popup_2d831fd3e4ccc49686d3050c0af07313)
+        ;
+
+        
+    
+    
+            var marker_5a5d567fc9cd2cbe8f54f7c705d792f4 = L.marker(
+                [-25.557311, -49.350028],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_3d43a8d2f78305725fd8dee3aed3d547 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_804b2e1595b5ccb2280a3443f25942b1 = $(`<div id="html_804b2e1595b5ccb2280a3443f25942b1" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 23:50:29 - Velocidade: 59 km/h - LatLong: [-25.557311, -49.350028]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.557311,-49.350028' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_3d43a8d2f78305725fd8dee3aed3d547.setContent(html_804b2e1595b5ccb2280a3443f25942b1);
+            
+        
+
+        marker_5a5d567fc9cd2cbe8f54f7c705d792f4.bindPopup(popup_3d43a8d2f78305725fd8dee3aed3d547)
+        ;
+
+        
+    
+    
+            var marker_497b77692695b81582b04e90d7c23adf = L.marker(
+                [-25.55577, -49.332581],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_9d1145897d44d0b09edf24168a966697 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e665e93bd5dbe6dc391ec52998bb279 = $(`<div id="html_6e665e93bd5dbe6dc391ec52998bb279" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 23:54:49 - Velocidade: 0 km/h - LatLong: [-25.55577, -49.332581]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.55577,-49.332581' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_9d1145897d44d0b09edf24168a966697.setContent(html_6e665e93bd5dbe6dc391ec52998bb279);
+            
+        
+
+        marker_497b77692695b81582b04e90d7c23adf.bindPopup(popup_9d1145897d44d0b09edf24168a966697)
+        ;
+
+        
+    
+    
+            var marker_f515ed431fe14f5e644481ff88133587 = L.marker(
+                [-25.555756, -49.332548],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_148b67bf03116425b6b59be03c53f6c6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6480a454b3008f5f4b73f7699c4b325c = $(`<div id="html_6480a454b3008f5f4b73f7699c4b325c" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:01:41 - Velocidade: 0 km/h - LatLong: [-25.555756, -49.332548]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.555756,-49.332548' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_148b67bf03116425b6b59be03c53f6c6.setContent(html_6480a454b3008f5f4b73f7699c4b325c);
+            
+        
+
+        marker_f515ed431fe14f5e644481ff88133587.bindPopup(popup_148b67bf03116425b6b59be03c53f6c6)
+        ;
+
+        
+    
+    
+            var marker_84d4d31d74792d7c604c24c84a592f28 = L.marker(
+                [-25.555873, -49.332217],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_52c7cb77c48fee0bc44e46418f6082b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1e397b8a568ebc73563a11cd12ef18ad = $(`<div id="html_1e397b8a568ebc73563a11cd12ef18ad" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:08:01 - Velocidade: 0 km/h - LatLong: [-25.555873, -49.332217]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.555873,-49.332217' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_52c7cb77c48fee0bc44e46418f6082b0.setContent(html_1e397b8a568ebc73563a11cd12ef18ad);
+            
+        
+
+        marker_84d4d31d74792d7c604c24c84a592f28.bindPopup(popup_52c7cb77c48fee0bc44e46418f6082b0)
+        ;
+
+        
+    
+    
+            var marker_9b0058e8162ba266cbd164cca8efde0a = L.marker(
+                [-25.570003, -49.310628],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_59ce4fac58563b16006f1348e35e853a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ec5a0da463171dd1d59eb65371f5e554 = $(`<div id="html_ec5a0da463171dd1d59eb65371f5e554" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:12:53 - Velocidade: 130 km/h - LatLong: [-25.570003, -49.310628]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.570003,-49.310628' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_59ce4fac58563b16006f1348e35e853a.setContent(html_ec5a0da463171dd1d59eb65371f5e554);
+            
+        
+
+        marker_9b0058e8162ba266cbd164cca8efde0a.bindPopup(popup_59ce4fac58563b16006f1348e35e853a)
+        ;
+
+        
+    
+    
+            var marker_77dc881f874e42968b840cad015a2cb2 = L.marker(
+                [-25.606594, -49.319004],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_fe34299c9cf6e26c05f9305f77b9ca86 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_753ddb94641607dddf196186db3e131b = $(`<div id="html_753ddb94641607dddf196186db3e131b" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:16:54 - Velocidade: 0 km/h - LatLong: [-25.606594, -49.319004]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.606594,-49.319004' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_fe34299c9cf6e26c05f9305f77b9ca86.setContent(html_753ddb94641607dddf196186db3e131b);
+            
+        
+
+        marker_77dc881f874e42968b840cad015a2cb2.bindPopup(popup_fe34299c9cf6e26c05f9305f77b9ca86)
+        ;
+
+        
+    
+    
+            var marker_a209eed41951e3d177b745aa297e00ad = L.marker(
+                [-25.606594, -49.319004],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_88a8fac2e06026f02812308efbcb8232 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3009e08a44c20363a563bbf493e661eb = $(`<div id="html_3009e08a44c20363a563bbf493e661eb" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:33:40 - Velocidade: 0 km/h - LatLong: [-25.606594, -49.319004]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.606594,-49.319004' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_88a8fac2e06026f02812308efbcb8232.setContent(html_3009e08a44c20363a563bbf493e661eb);
+            
+        
+
+        marker_a209eed41951e3d177b745aa297e00ad.bindPopup(popup_88a8fac2e06026f02812308efbcb8232)
+        ;
+
+        
+    
+    
+            var marker_27ee81d142a890bb22d96f0c80102fd8 = L.marker(
+                [-25.642674, -49.31288],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_59018e226bde66449526cea6eefc99b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fd947189a7e66693388b04ad05dbec86 = $(`<div id="html_fd947189a7e66693388b04ad05dbec86" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:37:40 - Velocidade: 102 km/h - LatLong: [-25.642674, -49.31288]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.642674,-49.31288' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_59018e226bde66449526cea6eefc99b5.setContent(html_fd947189a7e66693388b04ad05dbec86);
+            
+        
+
+        marker_27ee81d142a890bb22d96f0c80102fd8.bindPopup(popup_59018e226bde66449526cea6eefc99b5)
+        ;
+
+        
+    
+    
+            var marker_4024b7d9f93cca39ff2e193ed0680121 = L.marker(
+                [-25.670656, -49.321664],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_8517f3d2ccacf5c3f8b254e91b0c0c3b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_57be0e9def7c49d2d005c68df0597711 = $(`<div id="html_57be0e9def7c49d2d005c68df0597711" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 00:41:56 - Velocidade: 6 km/h - LatLong: [-25.670656, -49.321664]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.670656,-49.321664' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_8517f3d2ccacf5c3f8b254e91b0c0c3b.setContent(html_57be0e9def7c49d2d005c68df0597711);
+            
+        
+
+        marker_4024b7d9f93cca39ff2e193ed0680121.bindPopup(popup_8517f3d2ccacf5c3f8b254e91b0c0c3b)
+        ;
+
+        
+    
+    
+            var marker_66f51df5c4d2f636f9e53577b6b736e8 = L.marker(
+                [-25.670948, -49.321842],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_291d0a1cd393b1cd461cda110955e1e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_47a5b24658f2f5f22489710fa6c92041 = $(`<div id="html_47a5b24658f2f5f22489710fa6c92041" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:01:16 - Velocidade: 0 km/h - LatLong: [-25.670948, -49.321842]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.670948,-49.321842' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_291d0a1cd393b1cd461cda110955e1e9.setContent(html_47a5b24658f2f5f22489710fa6c92041);
+            
+        
+
+        marker_66f51df5c4d2f636f9e53577b6b736e8.bindPopup(popup_291d0a1cd393b1cd461cda110955e1e9)
+        ;
+
+        
+    
+    
+            var marker_2a29da9899938be8d47e748a1cabc477 = L.marker(
+                [-25.690362, -49.317262],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e1255feb891bf00a03bed9adb0c79c84 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bfa18e98ecc18f2ae9aac9c7b91ccb82 = $(`<div id="html_bfa18e98ecc18f2ae9aac9c7b91ccb82" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:06:50 - Velocidade: 44 km/h - LatLong: [-25.690362, -49.317262]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.690362,-49.317262' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e1255feb891bf00a03bed9adb0c79c84.setContent(html_bfa18e98ecc18f2ae9aac9c7b91ccb82);
+            
+        
+
+        marker_2a29da9899938be8d47e748a1cabc477.bindPopup(popup_e1255feb891bf00a03bed9adb0c79c84)
+        ;
+
+        
+    
+    
+            var marker_0f53687b5f2d64b410c7adf318ab913c = L.marker(
+                [-25.638366, -49.313023],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_5d94bf90fe7f20653d8d6a59d5126d43 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_829ef105c1fefc40581d5d0bafca11ff = $(`<div id="html_829ef105c1fefc40581d5d0bafca11ff" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:11:39 - Velocidade: 58 km/h - LatLong: [-25.638366, -49.313023]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.638366,-49.313023' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_5d94bf90fe7f20653d8d6a59d5126d43.setContent(html_829ef105c1fefc40581d5d0bafca11ff);
+            
+        
+
+        marker_0f53687b5f2d64b410c7adf318ab913c.bindPopup(popup_5d94bf90fe7f20653d8d6a59d5126d43)
+        ;
+
+        
+    
+    
+            var marker_a8cf74e282b81a734a1cf76defbf5c31 = L.marker(
+                [-25.579616, -49.312787],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_993709198cc1a3f0b63bf01c85e61332 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_918d91d6ab87b94b1f3e0f9fbab083c4 = $(`<div id="html_918d91d6ab87b94b1f3e0f9fbab083c4" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:15:51 - Velocidade: 94 km/h - LatLong: [-25.579616, -49.312787]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.579616,-49.312787' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_993709198cc1a3f0b63bf01c85e61332.setContent(html_918d91d6ab87b94b1f3e0f9fbab083c4);
+            
+        
+
+        marker_a8cf74e282b81a734a1cf76defbf5c31.bindPopup(popup_993709198cc1a3f0b63bf01c85e61332)
+        ;
+
+        
+    
+    
+            var marker_af95ebfcaebb525f2363d20dfeee62e3 = L.marker(
+                [-25.550594, -49.281532],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_ed173c111235cedc247ebaee46ebbf1e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2e33c1a758e627be43b573b09c55d1eb = $(`<div id="html_2e33c1a758e627be43b573b09c55d1eb" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:19:58 - Velocidade: 106 km/h - LatLong: [-25.550594, -49.281532]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.550594,-49.281532' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_ed173c111235cedc247ebaee46ebbf1e.setContent(html_2e33c1a758e627be43b573b09c55d1eb);
+            
+        
+
+        marker_af95ebfcaebb525f2363d20dfeee62e3.bindPopup(popup_ed173c111235cedc247ebaee46ebbf1e)
+        ;
+
+        
+    
+    
+            var marker_cabd3a426b8ce33feb262195c7e12ed2 = L.marker(
+                [-25.569914, -49.186523],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_5464b8a41bf2d675b8fd856f3f8f791e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c039060dbfd579d3949fe225a84d809c = $(`<div id="html_c039060dbfd579d3949fe225a84d809c" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:25:57 - Velocidade: 100 km/h - LatLong: [-25.569914, -49.186523]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.569914,-49.186523' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_5464b8a41bf2d675b8fd856f3f8f791e.setContent(html_c039060dbfd579d3949fe225a84d809c);
+            
+        
+
+        marker_cabd3a426b8ce33feb262195c7e12ed2.bindPopup(popup_5464b8a41bf2d675b8fd856f3f8f791e)
+        ;
+
+        
+    
+    
+            var marker_e4296f34ee7ac92bbac9e4cce2191f53 = L.marker(
+                [-25.528275, -49.141379],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e78163ceb1e6c8eb07c92cf407101dbf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ed0c082069f1a136199f26c20c384e39 = $(`<div id="html_ed0c082069f1a136199f26c20c384e39" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:30:19 - Velocidade: 101 km/h - LatLong: [-25.528275, -49.141379]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.528275,-49.141379' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e78163ceb1e6c8eb07c92cf407101dbf.setContent(html_ed0c082069f1a136199f26c20c384e39);
+            
+        
+
+        marker_e4296f34ee7ac92bbac9e4cce2191f53.bindPopup(popup_e78163ceb1e6c8eb07c92cf407101dbf)
+        ;
+
+        
+    
+    
+            var marker_3e0c15caf7416f01ae09c8faef7d27fa = L.marker(
+                [-25.479476, -49.101254],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_c7d0be0513c2384035619fc72f99d0d0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_61bbf70aefe9b5f7fca9d517d7f38c7d = $(`<div id="html_61bbf70aefe9b5f7fca9d517d7f38c7d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:34:19 - Velocidade: 105 km/h - LatLong: [-25.479476, -49.101254]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.479476,-49.101254' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_c7d0be0513c2384035619fc72f99d0d0.setContent(html_61bbf70aefe9b5f7fca9d517d7f38c7d);
+            
+        
+
+        marker_3e0c15caf7416f01ae09c8faef7d27fa.bindPopup(popup_c7d0be0513c2384035619fc72f99d0d0)
+        ;
+
+        
+    
+    
+            var marker_eedbc1cf82d742a4f7bb85329d0cff3c = L.marker(
+                [-25.416834, -49.068774],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_c28591ea8e9279160ab8f411125ec86b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_655db09aef26fa26813a850130b5343f = $(`<div id="html_655db09aef26fa26813a850130b5343f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:39:18 - Velocidade: 94 km/h - LatLong: [-25.416834, -49.068774]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.416834,-49.068774' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_c28591ea8e9279160ab8f411125ec86b.setContent(html_655db09aef26fa26813a850130b5343f);
+            
+        
+
+        marker_eedbc1cf82d742a4f7bb85329d0cff3c.bindPopup(popup_c28591ea8e9279160ab8f411125ec86b)
+        ;
+
+        
+    
+    
+            var marker_4259a32f23a8d2b9ba62bdce554853e4 = L.marker(
+                [-25.358798, -49.040512],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_b857dfd06ec43dcff3d172d02b09361a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0c5d539c8389786e9d0a996ce5ad6e09 = $(`<div id="html_0c5d539c8389786e9d0a996ce5ad6e09" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:43:18 - Velocidade: 118 km/h - LatLong: [-25.358798, -49.040512]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.358798,-49.040512' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_b857dfd06ec43dcff3d172d02b09361a.setContent(html_0c5d539c8389786e9d0a996ce5ad6e09);
+            
+        
+
+        marker_4259a32f23a8d2b9ba62bdce554853e4.bindPopup(popup_b857dfd06ec43dcff3d172d02b09361a)
+        ;
+
+        
+    
+    
+            var marker_b0ebb5438a66d6286a8e7c58603a3613 = L.marker(
+                [-25.307178, -48.987869],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e54e96eefbba7195da3e3adfa7c31863 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_97b5b567c7b7057e3cc5499beacc3d04 = $(`<div id="html_97b5b567c7b7057e3cc5499beacc3d04" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:49:03 - Velocidade: 111 km/h - LatLong: [-25.307178, -48.987869]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.307178,-48.987869' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e54e96eefbba7195da3e3adfa7c31863.setContent(html_97b5b567c7b7057e3cc5499beacc3d04);
+            
+        
+
+        marker_b0ebb5438a66d6286a8e7c58603a3613.bindPopup(popup_e54e96eefbba7195da3e3adfa7c31863)
+        ;
+
+        
+    
+    
+            var marker_c78f153da0546be8f187e6b8bf865695 = L.marker(
+                [-25.280851, -48.926992],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_25a827396d53b4b91e9d780937e51611 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c099889514d0f862faef8e6aff96d34 = $(`<div id="html_9c099889514d0f862faef8e6aff96d34" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:53:58 - Velocidade: 85 km/h - LatLong: [-25.280851, -48.926992]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.280851,-48.926992' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_25a827396d53b4b91e9d780937e51611.setContent(html_9c099889514d0f862faef8e6aff96d34);
+            
+        
+
+        marker_c78f153da0546be8f187e6b8bf865695.bindPopup(popup_25a827396d53b4b91e9d780937e51611)
+        ;
+
+        
+    
+    
+            var marker_e09b64db04dd6dde8d584be7b82c6920 = L.marker(
+                [-25.216511, -48.903416],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_6e1961357042ecaf98b9af865d1919f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fcdc38cd0bcca29dc455b068aeff3b24 = $(`<div id="html_fcdc38cd0bcca29dc455b068aeff3b24" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 01:58:44 - Velocidade: 107 km/h - LatLong: [-25.216511, -48.903416]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.216511,-48.903416' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_6e1961357042ecaf98b9af865d1919f1.setContent(html_fcdc38cd0bcca29dc455b068aeff3b24);
+            
+        
+
+        marker_e09b64db04dd6dde8d584be7b82c6920.bindPopup(popup_6e1961357042ecaf98b9af865d1919f1)
+        ;
+
+        
+    
+    
+            var marker_2a15705434a4925f0e821c76adafe9bf = L.marker(
+                [-25.178247, -48.87891],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_fc5ac782c57010bcf3185596f9a3b322 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_68950c1d907132dedcf4f33a396522a5 = $(`<div id="html_68950c1d907132dedcf4f33a396522a5" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:02:44 - Velocidade: 100 km/h - LatLong: [-25.178247, -48.87891]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.178247,-48.87891' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_fc5ac782c57010bcf3185596f9a3b322.setContent(html_68950c1d907132dedcf4f33a396522a5);
+            
+        
+
+        marker_2a15705434a4925f0e821c76adafe9bf.bindPopup(popup_fc5ac782c57010bcf3185596f9a3b322)
+        ;
+
+        
+    
+    
+            var marker_418133e5f7fb5f084652cbe207da24eb = L.marker(
+                [-25.116043, -48.853336],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_be1feb50c8d7f1700441b100ad013e77 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00dee13433d879f70e970cfee9b7003d = $(`<div id="html_00dee13433d879f70e970cfee9b7003d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:07:49 - Velocidade: 87 km/h - LatLong: [-25.116043, -48.853336]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.116043,-48.853336' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_be1feb50c8d7f1700441b100ad013e77.setContent(html_00dee13433d879f70e970cfee9b7003d);
+            
+        
+
+        marker_418133e5f7fb5f084652cbe207da24eb.bindPopup(popup_be1feb50c8d7f1700441b100ad013e77)
+        ;
+
+        
+    
+    
+            var marker_f15ad539a5f3608d54763ed05e0ca75e = L.marker(
+                [-25.110676, -48.806927],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_0fc42f03e1f4e4deafafeeb2821027cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00120201acafc53075e14f8a948a7ebe = $(`<div id="html_00120201acafc53075e14f8a948a7ebe" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:12:22 - Velocidade: 66 km/h - LatLong: [-25.110676, -48.806927]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.110676,-48.806927' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_0fc42f03e1f4e4deafafeeb2821027cd.setContent(html_00120201acafc53075e14f8a948a7ebe);
+            
+        
+
+        marker_f15ad539a5f3608d54763ed05e0ca75e.bindPopup(popup_0fc42f03e1f4e4deafafeeb2821027cd)
+        ;
+
+        
+    
+    
+            var marker_1f3ffde9f140291083f5ea4446da9095 = L.marker(
+                [-25.11383, -48.759368],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_893efb1ba59884584be87ecc903b8e9f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a52b3dfa1c1d5fd6071f2993129168f9 = $(`<div id="html_a52b3dfa1c1d5fd6071f2993129168f9" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:16:47 - Velocidade: 77 km/h - LatLong: [-25.11383, -48.759368]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.11383,-48.759368' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_893efb1ba59884584be87ecc903b8e9f.setContent(html_a52b3dfa1c1d5fd6071f2993129168f9);
+            
+        
+
+        marker_1f3ffde9f140291083f5ea4446da9095.bindPopup(popup_893efb1ba59884584be87ecc903b8e9f)
+        ;
+
+        
+    
+    
+            var marker_501122e0afcf57bc691071bdc7efae30 = L.marker(
+                [-25.103223, -48.700892],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_22f564a59778a3b688c8653a15e763ce = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e02d74d583a9b1ad9a7b97ebcd5c83d9 = $(`<div id="html_e02d74d583a9b1ad9a7b97ebcd5c83d9" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:21:26 - Velocidade: 86 km/h - LatLong: [-25.103223, -48.700892]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.103223,-48.700892' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_22f564a59778a3b688c8653a15e763ce.setContent(html_e02d74d583a9b1ad9a7b97ebcd5c83d9);
+            
+        
+
+        marker_501122e0afcf57bc691071bdc7efae30.bindPopup(popup_22f564a59778a3b688c8653a15e763ce)
+        ;
+
+        
+    
+    
+            var marker_0b96fa4da8190962beb106ae2bd3fa07 = L.marker(
+                [-25.083845, -48.633237],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e46f36590db6851babd5129d328039a4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b8c65889ea7b8a7d819d172507fcb12f = $(`<div id="html_b8c65889ea7b8a7d819d172507fcb12f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:27:20 - Velocidade: 74 km/h - LatLong: [-25.083845, -48.633237]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.083845,-48.633237' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e46f36590db6851babd5129d328039a4.setContent(html_b8c65889ea7b8a7d819d172507fcb12f);
+            
+        
+
+        marker_0b96fa4da8190962beb106ae2bd3fa07.bindPopup(popup_e46f36590db6851babd5129d328039a4)
+        ;
+
+        
+    
+    
+            var marker_9a494134d8e3aef71d43065e1c6d8796 = L.marker(
+                [-25.073149, -48.586278],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_a91dbe99872c54fe575444832f769380 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5b0cca62e0f7ed27864997bf3e25eaa7 = $(`<div id="html_5b0cca62e0f7ed27864997bf3e25eaa7" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:32:14 - Velocidade: 61 km/h - LatLong: [-25.073149, -48.586278]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.073149,-48.586278' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_a91dbe99872c54fe575444832f769380.setContent(html_5b0cca62e0f7ed27864997bf3e25eaa7);
+            
+        
+
+        marker_9a494134d8e3aef71d43065e1c6d8796.bindPopup(popup_a91dbe99872c54fe575444832f769380)
+        ;
+
+        
+    
+    
+            var marker_096e48d1358880225d3d6e651c147822 = L.marker(
+                [-25.030144, -48.531331],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_dd33c09c4f83ad5e08179e0d8c1b9d7d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4c8cc1305f86cab0cbaa39d86c0dd1c4 = $(`<div id="html_4c8cc1305f86cab0cbaa39d86c0dd1c4" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:37:21 - Velocidade: 91 km/h - LatLong: [-25.030144, -48.531331]<br><a href='https://www.google.com/maps/search/?api=1&query=-25.030144,-48.531331' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_dd33c09c4f83ad5e08179e0d8c1b9d7d.setContent(html_4c8cc1305f86cab0cbaa39d86c0dd1c4);
+            
+        
+
+        marker_096e48d1358880225d3d6e651c147822.bindPopup(popup_dd33c09c4f83ad5e08179e0d8c1b9d7d)
+        ;
+
+        
+    
+    
+            var marker_ca49ad6336252cda5220e4be19ce7a61 = L.marker(
+                [-24.976833, -48.504332],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_4c9fe400a887a170bfffe384c4466158 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89cb830716b94a29874cf1d42fd37d90 = $(`<div id="html_89cb830716b94a29874cf1d42fd37d90" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:42:00 - Velocidade: 81 km/h - LatLong: [-24.976833, -48.504332]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.976833,-48.504332' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_4c9fe400a887a170bfffe384c4466158.setContent(html_89cb830716b94a29874cf1d42fd37d90);
+            
+        
+
+        marker_ca49ad6336252cda5220e4be19ce7a61.bindPopup(popup_4c9fe400a887a170bfffe384c4466158)
+        ;
+
+        
+    
+    
+            var marker_e3a3b73745aab310adaf0d682b4c95c2 = L.marker(
+                [-24.968197, -48.454355],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_8fe2025469d0f4359817f432b5b92bdb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_688a357f73c4ebd55322cca1477f03d1 = $(`<div id="html_688a357f73c4ebd55322cca1477f03d1" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:46:17 - Velocidade: 73 km/h - LatLong: [-24.968197, -48.454355]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.968197,-48.454355' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_8fe2025469d0f4359817f432b5b92bdb.setContent(html_688a357f73c4ebd55322cca1477f03d1);
+            
+        
+
+        marker_e3a3b73745aab310adaf0d682b4c95c2.bindPopup(popup_8fe2025469d0f4359817f432b5b92bdb)
+        ;
+
+        
+    
+    
+            var marker_3e113a9b9484c165c6c0357d326ed705 = L.marker(
+                [-24.972724, -48.40329],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_9edfddeb3368989ad415129e9cedf36a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f33d34726b4c95cb21a790c8e6c148ae = $(`<div id="html_f33d34726b4c95cb21a790c8e6c148ae" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:50:41 - Velocidade: 89 km/h - LatLong: [-24.972724, -48.40329]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.972724,-48.40329' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_9edfddeb3368989ad415129e9cedf36a.setContent(html_f33d34726b4c95cb21a790c8e6c148ae);
+            
+        
+
+        marker_3e113a9b9484c165c6c0357d326ed705.bindPopup(popup_9edfddeb3368989ad415129e9cedf36a)
+        ;
+
+        
+    
+    
+            var marker_15e59debd8be3982ab966d5648950723 = L.marker(
+                [-24.954297, -48.329428],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_68456cec3f848dc657d70b7e4ffcce61 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_14b67439220785dde3deac48c61a1515 = $(`<div id="html_14b67439220785dde3deac48c61a1515" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 02:55:57 - Velocidade: 96 km/h - LatLong: [-24.954297, -48.329428]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.954297,-48.329428' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_68456cec3f848dc657d70b7e4ffcce61.setContent(html_14b67439220785dde3deac48c61a1515);
+            
+        
+
+        marker_15e59debd8be3982ab966d5648950723.bindPopup(popup_68456cec3f848dc657d70b7e4ffcce61)
+        ;
+
+        
+    
+    
+            var marker_6a95241e7f89de64b8d1ccc8d08651b9 = L.marker(
+                [-24.92123, -48.259541],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_ccbb9ef5f31887d78bb99d6ab67207ef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_12e518b3bccceba842fb54068d0ba66d = $(`<div id="html_12e518b3bccceba842fb54068d0ba66d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:00:46 - Velocidade: 101 km/h - LatLong: [-24.92123, -48.259541]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.92123,-48.259541' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_ccbb9ef5f31887d78bb99d6ab67207ef.setContent(html_12e518b3bccceba842fb54068d0ba66d);
+            
+        
+
+        marker_6a95241e7f89de64b8d1ccc8d08651b9.bindPopup(popup_ccbb9ef5f31887d78bb99d6ab67207ef)
+        ;
+
+        
+    
+    
+            var marker_a619ef210a772bc2c8f908b3a3851ddc = L.marker(
+                [-24.881035, -48.210399],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_73900d79722768e638de37d8de769a7a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1e7c47b46ca2ed53cc2134f1dd9b21ed = $(`<div id="html_1e7c47b46ca2ed53cc2134f1dd9b21ed" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:05:09 - Velocidade: 80 km/h - LatLong: [-24.881035, -48.210399]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.881035,-48.210399' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_73900d79722768e638de37d8de769a7a.setContent(html_1e7c47b46ca2ed53cc2134f1dd9b21ed);
+            
+        
+
+        marker_a619ef210a772bc2c8f908b3a3851ddc.bindPopup(popup_73900d79722768e638de37d8de769a7a)
+        ;
+
+        
+    
+    
+            var marker_2395700c59e1349d2e2cf562e7c9a401 = L.marker(
+                [-24.844658, -48.211467],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_b2a434a611cf524a5ba78c272c5f8287 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c21378ccef1220e2d4f7d7edcc1442cc = $(`<div id="html_c21378ccef1220e2d4f7d7edcc1442cc" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:09:14 - Velocidade: 63 km/h - LatLong: [-24.844658, -48.211467]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.844658,-48.211467' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_b2a434a611cf524a5ba78c272c5f8287.setContent(html_c21378ccef1220e2d4f7d7edcc1442cc);
+            
+        
+
+        marker_2395700c59e1349d2e2cf562e7c9a401.bindPopup(popup_b2a434a611cf524a5ba78c272c5f8287)
+        ;
+
+        
+    
+    
+            var marker_1b19e7f6b44d62e3b658f934be8aa8e9 = L.marker(
+                [-24.798499, -48.211012],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_2cffbf1be78cbfa2b26d8c7f7c3b2f54 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2677818b8b24092ad99e935c1ce1b1af = $(`<div id="html_2677818b8b24092ad99e935c1ce1b1af" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:13:46 - Velocidade: 69 km/h - LatLong: [-24.798499, -48.211012]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.798499,-48.211012' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_2cffbf1be78cbfa2b26d8c7f7c3b2f54.setContent(html_2677818b8b24092ad99e935c1ce1b1af);
+            
+        
+
+        marker_1b19e7f6b44d62e3b658f934be8aa8e9.bindPopup(popup_2cffbf1be78cbfa2b26d8c7f7c3b2f54)
+        ;
+
+        
+    
+    
+            var marker_faf13f67f0edd3aba0964b4ae0b9f904 = L.marker(
+                [-24.786341, -48.17594],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_0f14b53e06f00080da7cd2806981b354 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_67ca31ead7daee4962f44ff3ec0ea40e = $(`<div id="html_67ca31ead7daee4962f44ff3ec0ea40e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:17:47 - Velocidade: 18 km/h - LatLong: [-24.786341, -48.17594]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.786341,-48.17594' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_0f14b53e06f00080da7cd2806981b354.setContent(html_67ca31ead7daee4962f44ff3ec0ea40e);
+            
+        
+
+        marker_faf13f67f0edd3aba0964b4ae0b9f904.bindPopup(popup_0f14b53e06f00080da7cd2806981b354)
+        ;
+
+        
+    
+    
+            var marker_e3bcfbf55d8bbe42184f215f392f9cb0 = L.marker(
+                [-24.786116, -48.174818],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_a4697853a1dcf83f36a010021590d985 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_21ed7da09bf456206874ee7d03701172 = $(`<div id="html_21ed7da09bf456206874ee7d03701172" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:22:09 - Velocidade: 0 km/h - LatLong: [-24.786116, -48.174818]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.786116,-48.174818' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_a4697853a1dcf83f36a010021590d985.setContent(html_21ed7da09bf456206874ee7d03701172);
+            
+        
+
+        marker_e3bcfbf55d8bbe42184f215f392f9cb0.bindPopup(popup_a4697853a1dcf83f36a010021590d985)
+        ;
+
+        
+    
+    
+            var marker_489afc386477a80dcb250a2514a790de = L.marker(
+                [-24.766046, -48.16747],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_b07ebb963d5fc29dc11d4865f7b80977 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_afc9f8a5d32f28792996fdb5e502739d = $(`<div id="html_afc9f8a5d32f28792996fdb5e502739d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:26:10 - Velocidade: 87 km/h - LatLong: [-24.766046, -48.16747]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.766046,-48.16747' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_b07ebb963d5fc29dc11d4865f7b80977.setContent(html_afc9f8a5d32f28792996fdb5e502739d);
+            
+        
+
+        marker_489afc386477a80dcb250a2514a790de.bindPopup(popup_b07ebb963d5fc29dc11d4865f7b80977)
+        ;
+
+        
+    
+    
+            var marker_c47380a4572f27abccdd1077adafc709 = L.marker(
+                [-24.732561, -48.112062],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_7c7a348472489bf9b4784000b3241e6e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_46c48f0312d2aa0e27721a026aee02e0 = $(`<div id="html_46c48f0312d2aa0e27721a026aee02e0" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:30:10 - Velocidade: 118 km/h - LatLong: [-24.732561, -48.112062]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.732561,-48.112062' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_7c7a348472489bf9b4784000b3241e6e.setContent(html_46c48f0312d2aa0e27721a026aee02e0);
+            
+        
+
+        marker_c47380a4572f27abccdd1077adafc709.bindPopup(popup_7c7a348472489bf9b4784000b3241e6e)
+        ;
+
+        
+    
+    
+            var marker_7e0f7f32a2d18b23455ff15f25962b9a = L.marker(
+                [-24.722033, -48.043299],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_6b3abe7adeaa71c4831e38d43c2a35e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e58b678a8578ae55c3a52a5f92e3639f = $(`<div id="html_e58b678a8578ae55c3a52a5f92e3639f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:34:45 - Velocidade: 106 km/h - LatLong: [-24.722033, -48.043299]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.722033,-48.043299' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_6b3abe7adeaa71c4831e38d43c2a35e1.setContent(html_e58b678a8578ae55c3a52a5f92e3639f);
+            
+        
+
+        marker_7e0f7f32a2d18b23455ff15f25962b9a.bindPopup(popup_6b3abe7adeaa71c4831e38d43c2a35e1)
+        ;
+
+        
+    
+    
+            var marker_76af32290f35bfa1ada7592261d00de3 = L.marker(
+                [-24.68065, -47.98311],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_12c400562b2be145251402aea4a725d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3b0eb3a391f6d06b8bbb041833a45cec = $(`<div id="html_3b0eb3a391f6d06b8bbb041833a45cec" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:38:45 - Velocidade: 119 km/h - LatLong: [-24.68065, -47.98311]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.68065,-47.98311' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_12c400562b2be145251402aea4a725d7.setContent(html_3b0eb3a391f6d06b8bbb041833a45cec);
+            
+        
+
+        marker_76af32290f35bfa1ada7592261d00de3.bindPopup(popup_12c400562b2be145251402aea4a725d7)
+        ;
+
+        
+    
+    
+            var marker_94d3218ae1547e889655df8687ac57fd = L.marker(
+                [-24.643851, -47.917998],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_53ee18d26e6c836853c7b3c040abe408 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fb6f910ceeeb8429e701295a438dec81 = $(`<div id="html_fb6f910ceeeb8429e701295a438dec81" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:43:08 - Velocidade: 118 km/h - LatLong: [-24.643851, -47.917998]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.643851,-47.917998' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_53ee18d26e6c836853c7b3c040abe408.setContent(html_fb6f910ceeeb8429e701295a438dec81);
+            
+        
+
+        marker_94d3218ae1547e889655df8687ac57fd.bindPopup(popup_53ee18d26e6c836853c7b3c040abe408)
+        ;
+
+        
+    
+    
+            var marker_3c1e8c3d56669d6cc35ff2ba4acd568f = L.marker(
+                [-24.578769, -47.884557],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_3c6e7c546988cbd64ffb38bd505b4961 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8759f976e4228e6ca11e677d2296bd4 = $(`<div id="html_d8759f976e4228e6ca11e677d2296bd4" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:48:26 - Velocidade: 80 km/h - LatLong: [-24.578769, -47.884557]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.578769,-47.884557' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_3c6e7c546988cbd64ffb38bd505b4961.setContent(html_d8759f976e4228e6ca11e677d2296bd4);
+            
+        
+
+        marker_3c1e8c3d56669d6cc35ff2ba4acd568f.bindPopup(popup_3c6e7c546988cbd64ffb38bd505b4961)
+        ;
+
+        
+    
+    
+            var marker_d121a35fadcf992b1e1ea83e656ab4a1 = L.marker(
+                [-24.515123, -47.851381],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_0620e94fea8f1fb703dc3e9aa463b0ed = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a816641b6e434f8de6b28d759f8a885 = $(`<div id="html_7a816641b6e434f8de6b28d759f8a885" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:53:10 - Velocidade: 102 km/h - LatLong: [-24.515123, -47.851381]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.515123,-47.851381' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_0620e94fea8f1fb703dc3e9aa463b0ed.setContent(html_7a816641b6e434f8de6b28d759f8a885);
+            
+        
+
+        marker_d121a35fadcf992b1e1ea83e656ab4a1.bindPopup(popup_0620e94fea8f1fb703dc3e9aa463b0ed)
+        ;
+
+        
+    
+    
+            var marker_46967f55c789636a7389bfe10f9f7129 = L.marker(
+                [-24.462016, -47.817481],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_ebeae5951a3839b8c109faa2cb4c10cc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9f709f32ec51dc1319413663ef810886 = $(`<div id="html_9f709f32ec51dc1319413663ef810886" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 03:57:10 - Velocidade: 108 km/h - LatLong: [-24.462016, -47.817481]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.462016,-47.817481' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_ebeae5951a3839b8c109faa2cb4c10cc.setContent(html_9f709f32ec51dc1319413663ef810886);
+            
+        
+
+        marker_46967f55c789636a7389bfe10f9f7129.bindPopup(popup_ebeae5951a3839b8c109faa2cb4c10cc)
+        ;
+
+        
+    
+    
+            var marker_2ae58024bb7f7ce36ebfc68f96d4b705 = L.marker(
+                [-24.416392, -47.761611],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_5e552998f29e2601905b961910c8c997 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_947470cdd8d22a7585919131634751b7 = $(`<div id="html_947470cdd8d22a7585919131634751b7" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:01:10 - Velocidade: 117 km/h - LatLong: [-24.416392, -47.761611]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.416392,-47.761611' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_5e552998f29e2601905b961910c8c997.setContent(html_947470cdd8d22a7585919131634751b7);
+            
+        
+
+        marker_2ae58024bb7f7ce36ebfc68f96d4b705.bindPopup(popup_5e552998f29e2601905b961910c8c997)
+        ;
+
+        
+    
+    
+            var marker_1721e746c5e8fbbf9644f164524b1b01 = L.marker(
+                [-24.371515, -47.705048],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_bf8a33d40cf6b997011b60cd30eee7ef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5aaf0fb0c7bc0d0c5ac57b73ecd9d4b8 = $(`<div id="html_5aaf0fb0c7bc0d0c5ac57b73ecd9d4b8" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:05:59 - Velocidade: 97 km/h - LatLong: [-24.371515, -47.705048]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.371515,-47.705048' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_bf8a33d40cf6b997011b60cd30eee7ef.setContent(html_5aaf0fb0c7bc0d0c5ac57b73ecd9d4b8);
+            
+        
+
+        marker_1721e746c5e8fbbf9644f164524b1b01.bindPopup(popup_bf8a33d40cf6b997011b60cd30eee7ef)
+        ;
+
+        
+    
+    
+            var marker_52b6205baf9189ec18624ff0e207d9de = L.marker(
+                [-24.334244, -47.641104],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_734d8d7047eac8c0032b9e5ba93c7467 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d3b0922e317ddf99dd2583bbb366598e = $(`<div id="html_d3b0922e317ddf99dd2583bbb366598e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:10:54 - Velocidade: 111 km/h - LatLong: [-24.334244, -47.641104]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.334244,-47.641104' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_734d8d7047eac8c0032b9e5ba93c7467.setContent(html_d3b0922e317ddf99dd2583bbb366598e);
+            
+        
+
+        marker_52b6205baf9189ec18624ff0e207d9de.bindPopup(popup_734d8d7047eac8c0032b9e5ba93c7467)
+        ;
+
+        
+    
+    
+            var marker_37e60eda1fe659604984a797ae209c77 = L.marker(
+                [-24.3251, -47.556512],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e3efe3251d366a9b9aba3d7637d5ec65 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b201f8e50a01f9916f1a81a87a3cb4ce = $(`<div id="html_b201f8e50a01f9916f1a81a87a3cb4ce" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:15:48 - Velocidade: 110 km/h - LatLong: [-24.3251, -47.556512]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.3251,-47.556512' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e3efe3251d366a9b9aba3d7637d5ec65.setContent(html_b201f8e50a01f9916f1a81a87a3cb4ce);
+            
+        
+
+        marker_37e60eda1fe659604984a797ae209c77.bindPopup(popup_e3efe3251d366a9b9aba3d7637d5ec65)
+        ;
+
+        
+    
+    
+            var marker_688c64d96e31430fd74e98dc99a3cd21 = L.marker(
+                [-24.30452, -47.489661],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_950d306a54369c2ca3a6bf460b14e196 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8269cf62fe064f29e6a09f6ab3d68950 = $(`<div id="html_8269cf62fe064f29e6a09f6ab3d68950" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:19:48 - Velocidade: 109 km/h - LatLong: [-24.30452, -47.489661]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.30452,-47.489661' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_950d306a54369c2ca3a6bf460b14e196.setContent(html_8269cf62fe064f29e6a09f6ab3d68950);
+            
+        
+
+        marker_688c64d96e31430fd74e98dc99a3cd21.bindPopup(popup_950d306a54369c2ca3a6bf460b14e196)
+        ;
+
+        
+    
+    
+            var marker_f2a916584cf51a1425650a62f2c93143 = L.marker(
+                [-24.28634, -47.443232],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_d23553d2b032a712552c571d038b8eb6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c7e71f00b7c12f6ae5f72ebaddcded1 = $(`<div id="html_9c7e71f00b7c12f6ae5f72ebaddcded1" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:24:04 - Velocidade: 0 km/h - LatLong: [-24.28634, -47.443232]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.28634,-47.443232' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_d23553d2b032a712552c571d038b8eb6.setContent(html_9c7e71f00b7c12f6ae5f72ebaddcded1);
+            
+        
+
+        marker_f2a916584cf51a1425650a62f2c93143.bindPopup(popup_d23553d2b032a712552c571d038b8eb6)
+        ;
+
+        
+    
+    
+            var marker_0dea95bcaf9a0c57ce25a4bedb640336 = L.marker(
+                [-24.286406, -47.443193],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_73a01ce8707620b19b446d345f2dd30d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4858bd4eeebf350323e9aca9f44e7d50 = $(`<div id="html_4858bd4eeebf350323e9aca9f44e7d50" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:32:32 - Velocidade: 0 km/h - LatLong: [-24.286406, -47.443193]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.286406,-47.443193' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_73a01ce8707620b19b446d345f2dd30d.setContent(html_4858bd4eeebf350323e9aca9f44e7d50);
+            
+        
+
+        marker_0dea95bcaf9a0c57ce25a4bedb640336.bindPopup(popup_73a01ce8707620b19b446d345f2dd30d)
+        ;
+
+        
+    
+    
+            var marker_cc614c3bbfff34ec9156b121dce381e0 = L.marker(
+                [-24.260864, -47.37752],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_f902a619931533099536c5cb0adb73a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_78269842d3d4e1094b9875eff304aa5c = $(`<div id="html_78269842d3d4e1094b9875eff304aa5c" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:36:58 - Velocidade: 103 km/h - LatLong: [-24.260864, -47.37752]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.260864,-47.37752' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_f902a619931533099536c5cb0adb73a3.setContent(html_78269842d3d4e1094b9875eff304aa5c);
+            
+        
+
+        marker_cc614c3bbfff34ec9156b121dce381e0.bindPopup(popup_f902a619931533099536c5cb0adb73a3)
+        ;
+
+        
+    
+    
+            var marker_319acb8430dfe8d781e8a7c970bd43e4 = L.marker(
+                [-24.190985, -47.359703],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_f33e76d3e009d6e64cb3667d78701a3e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ddc1fad1b762cff3b30bc6247ba01614 = $(`<div id="html_ddc1fad1b762cff3b30bc6247ba01614" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:41:41 - Velocidade: 90 km/h - LatLong: [-24.190985, -47.359703]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.190985,-47.359703' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_f33e76d3e009d6e64cb3667d78701a3e.setContent(html_ddc1fad1b762cff3b30bc6247ba01614);
+            
+        
+
+        marker_319acb8430dfe8d781e8a7c970bd43e4.bindPopup(popup_f33e76d3e009d6e64cb3667d78701a3e)
+        ;
+
+        
+    
+    
+            var marker_8986d0716a66a4a5f196a699dcb84941 = L.marker(
+                [-24.149324, -47.307785],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_cb1ed2c7e3f17f362f54d1d2fabd0581 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_10098a75d162bf2b4491b11c913d5124 = $(`<div id="html_10098a75d162bf2b4491b11c913d5124" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:46:04 - Velocidade: 116 km/h - LatLong: [-24.149324, -47.307785]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.149324,-47.307785' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_cb1ed2c7e3f17f362f54d1d2fabd0581.setContent(html_10098a75d162bf2b4491b11c913d5124);
+            
+        
+
+        marker_8986d0716a66a4a5f196a699dcb84941.bindPopup(popup_cb1ed2c7e3f17f362f54d1d2fabd0581)
+        ;
+
+        
+    
+    
+            var marker_042c1ef470534469ffb3c1727ea403a4 = L.marker(
+                [-24.122278, -47.270657],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_2ea348b0d14be196854cedcf20cff6a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_237744971c78e18595fbc0ca517e5fdc = $(`<div id="html_237744971c78e18595fbc0ca517e5fdc" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:50:06 - Velocidade: 82 km/h - LatLong: [-24.122278, -47.270657]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.122278,-47.270657' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_2ea348b0d14be196854cedcf20cff6a1.setContent(html_237744971c78e18595fbc0ca517e5fdc);
+            
+        
+
+        marker_042c1ef470534469ffb3c1727ea403a4.bindPopup(popup_2ea348b0d14be196854cedcf20cff6a1)
+        ;
+
+        
+    
+    
+            var marker_cae101ed71cb5c09813850e0f0364be3 = L.marker(
+                [-24.097503, -47.254325],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_48815ab581521b08691110ad3d52382a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e6453bdd264881e8a80406669d5322f3 = $(`<div id="html_e6453bdd264881e8a80406669d5322f3" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:54:10 - Velocidade: 75 km/h - LatLong: [-24.097503, -47.254325]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.097503,-47.254325' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_48815ab581521b08691110ad3d52382a.setContent(html_e6453bdd264881e8a80406669d5322f3);
+            
+        
+
+        marker_cae101ed71cb5c09813850e0f0364be3.bindPopup(popup_48815ab581521b08691110ad3d52382a)
+        ;
+
+        
+    
+    
+            var marker_06704a9623a423d9b4052aa0aad947a5 = L.marker(
+                [-24.057602, -47.22396],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_4c14b3c3d5204b9da95620725423414d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_806746f601ae3618d86c963ff4eafaa6 = $(`<div id="html_806746f601ae3618d86c963ff4eafaa6" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 04:58:26 - Velocidade: 104 km/h - LatLong: [-24.057602, -47.22396]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.057602,-47.22396' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_4c14b3c3d5204b9da95620725423414d.setContent(html_806746f601ae3618d86c963ff4eafaa6);
+            
+        
+
+        marker_06704a9623a423d9b4052aa0aad947a5.bindPopup(popup_4c14b3c3d5204b9da95620725423414d)
+        ;
+
+        
+    
+    
+            var marker_60e252896259f06d0afe2f0899759c51 = L.marker(
+                [-24.027034, -47.173749],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_97ab006e7058befd1bae42745fbae325 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6221efd7fff219f07f6238966f53b540 = $(`<div id="html_6221efd7fff219f07f6238966f53b540" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:03:53 - Velocidade: 97 km/h - LatLong: [-24.027034, -47.173749]<br><a href='https://www.google.com/maps/search/?api=1&query=-24.027034,-47.173749' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_97ab006e7058befd1bae42745fbae325.setContent(html_6221efd7fff219f07f6238966f53b540);
+            
+        
+
+        marker_60e252896259f06d0afe2f0899759c51.bindPopup(popup_97ab006e7058befd1bae42745fbae325)
+        ;
+
+        
+    
+    
+            var marker_972f775aecfd2303ac645d175b6f2a7a = L.marker(
+                [-23.97653, -47.143657],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_a170162803f7bb7d1a9c4ed012effc4c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f4a053b40b5a314cfcd1199e86a8fd74 = $(`<div id="html_f4a053b40b5a314cfcd1199e86a8fd74" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:08:12 - Velocidade: 104 km/h - LatLong: [-23.97653, -47.143657]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.97653,-47.143657' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_a170162803f7bb7d1a9c4ed012effc4c.setContent(html_f4a053b40b5a314cfcd1199e86a8fd74);
+            
+        
+
+        marker_972f775aecfd2303ac645d175b6f2a7a.bindPopup(popup_a170162803f7bb7d1a9c4ed012effc4c)
+        ;
+
+        
+    
+    
+            var marker_6b3886bc43915e352e2148678b0c6e08 = L.marker(
+                [-23.936464, -47.079899],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_7c79b23a11c305abc35470c7f6fb7a3c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f75993cb64888089d6d7b7c0d4edf28f = $(`<div id="html_f75993cb64888089d6d7b7c0d4edf28f" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:12:44 - Velocidade: 90 km/h - LatLong: [-23.936464, -47.079899]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.936464,-47.079899' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_7c79b23a11c305abc35470c7f6fb7a3c.setContent(html_f75993cb64888089d6d7b7c0d4edf28f);
+            
+        
+
+        marker_6b3886bc43915e352e2148678b0c6e08.bindPopup(popup_7c79b23a11c305abc35470c7f6fb7a3c)
+        ;
+
+        
+    
+    
+            var marker_af4de3a02e7c52336ac2c05efaf332a4 = L.marker(
+                [-23.929381, -46.996111],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_7b7c9d9443e3b06ff4464fd02ebb3987 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5af437fd363b7faa5f868157bf26629e = $(`<div id="html_5af437fd363b7faa5f868157bf26629e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:18:00 - Velocidade: 73 km/h - LatLong: [-23.929381, -46.996111]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.929381,-46.996111' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_7b7c9d9443e3b06ff4464fd02ebb3987.setContent(html_5af437fd363b7faa5f868157bf26629e);
+            
+        
+
+        marker_af4de3a02e7c52336ac2c05efaf332a4.bindPopup(popup_7b7c9d9443e3b06ff4464fd02ebb3987)
+        ;
+
+        
+    
+    
+            var marker_816b530e31a4ae0952781ca046bb5aaf = L.marker(
+                [-23.870678, -46.959508],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_5c13938608b259df1f7a827cf4918d7d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a54f67a227bc4e9717417ae6d85684db = $(`<div id="html_a54f67a227bc4e9717417ae6d85684db" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:23:09 - Velocidade: 97 km/h - LatLong: [-23.870678, -46.959508]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.870678,-46.959508' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_5c13938608b259df1f7a827cf4918d7d.setContent(html_a54f67a227bc4e9717417ae6d85684db);
+            
+        
+
+        marker_816b530e31a4ae0952781ca046bb5aaf.bindPopup(popup_5c13938608b259df1f7a827cf4918d7d)
+        ;
+
+        
+    
+    
+            var marker_94ea4a314a5b2104da4303da77be6df4 = L.marker(
+                [-23.816751, -46.923817],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_4546df64153620c4a2a17490cbd05f11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_841dad560a9b4d296642864a330c4e52 = $(`<div id="html_841dad560a9b4d296642864a330c4e52" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:28:04 - Velocidade: 110 km/h - LatLong: [-23.816751, -46.923817]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.816751,-46.923817' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_4546df64153620c4a2a17490cbd05f11.setContent(html_841dad560a9b4d296642864a330c4e52);
+            
+        
+
+        marker_94ea4a314a5b2104da4303da77be6df4.bindPopup(popup_4546df64153620c4a2a17490cbd05f11)
+        ;
+
+        
+    
+    
+            var marker_e394563b3a6c69cd63dc55ca7599a9a7 = L.marker(
+                [-23.750844, -46.901086],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_ba14bee30c1ea3272c09401f1a94027f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_27ecbeab8091c05fa13c57525ab838b7 = $(`<div id="html_27ecbeab8091c05fa13c57525ab838b7" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:33:41 - Velocidade: 107 km/h - LatLong: [-23.750844, -46.901086]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.750844,-46.901086' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_ba14bee30c1ea3272c09401f1a94027f.setContent(html_27ecbeab8091c05fa13c57525ab838b7);
+            
+        
+
+        marker_e394563b3a6c69cd63dc55ca7599a9a7.bindPopup(popup_ba14bee30c1ea3272c09401f1a94027f)
+        ;
+
+        
+    
+    
+            var marker_ad46819d50f4bdf876d697a647393785 = L.marker(
+                [-23.701314, -46.86977],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_6f3a8a703dd86f1fd83b941080499f42 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d79f7ec4e505811cd5cc0ae89f859165 = $(`<div id="html_d79f7ec4e505811cd5cc0ae89f859165" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:37:55 - Velocidade: 87 km/h - LatLong: [-23.701314, -46.86977]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.701314,-46.86977' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_6f3a8a703dd86f1fd83b941080499f42.setContent(html_d79f7ec4e505811cd5cc0ae89f859165);
+            
+        
+
+        marker_ad46819d50f4bdf876d697a647393785.bindPopup(popup_6f3a8a703dd86f1fd83b941080499f42)
+        ;
+
+        
+    
+    
+            var marker_f7bf8c4e26effd236bb3142dbd477b21 = L.marker(
+                [-23.673631, -46.856398],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_30facbcb52220b3a6e3761447580f1cb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31647bca93dc18a1a32ad697433edf3d = $(`<div id="html_31647bca93dc18a1a32ad697433edf3d" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:42:39 - Velocidade: 38 km/h - LatLong: [-23.673631, -46.856398]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.673631,-46.856398' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_30facbcb52220b3a6e3761447580f1cb.setContent(html_31647bca93dc18a1a32ad697433edf3d);
+            
+        
+
+        marker_f7bf8c4e26effd236bb3142dbd477b21.bindPopup(popup_30facbcb52220b3a6e3761447580f1cb)
+        ;
+
+        
+    
+    
+            var marker_2b76c9d958e7b17b63120e9e3af0a20b = L.marker(
+                [-23.663844, -46.853672],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_843c7fffca2f883c7b6e19a5afe26315 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc66a348543fc71e379b2aac8deb1320 = $(`<div id="html_fc66a348543fc71e379b2aac8deb1320" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:46:39 - Velocidade: 19 km/h - LatLong: [-23.663844, -46.853672]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.663844,-46.853672' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_843c7fffca2f883c7b6e19a5afe26315.setContent(html_fc66a348543fc71e379b2aac8deb1320);
+            
+        
+
+        marker_2b76c9d958e7b17b63120e9e3af0a20b.bindPopup(popup_843c7fffca2f883c7b6e19a5afe26315)
+        ;
+
+        
+    
+    
+            var marker_12134afe65bd09549e54abacd0bb07cc = L.marker(
+                [-23.654355, -46.85607],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_99dc72fe9577e98f02ee530dfe1e9ff6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c0ad8de85165bc30870df35d055408d6 = $(`<div id="html_c0ad8de85165bc30870df35d055408d6" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:50:41 - Velocidade: 31 km/h - LatLong: [-23.654355, -46.85607]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.654355,-46.85607' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_99dc72fe9577e98f02ee530dfe1e9ff6.setContent(html_c0ad8de85165bc30870df35d055408d6);
+            
+        
+
+        marker_12134afe65bd09549e54abacd0bb07cc.bindPopup(popup_99dc72fe9577e98f02ee530dfe1e9ff6)
+        ;
+
+        
+    
+    
+            var marker_b8381a5814c96c22e2f30845af315679 = L.marker(
+                [-23.643985, -46.875494],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_bdcaa47ec22e2fb9493ea38749cac1eb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_de4db6f7409b8834ffa6dbbe79238b9e = $(`<div id="html_de4db6f7409b8834ffa6dbbe79238b9e" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:55:21 - Velocidade: 17 km/h - LatLong: [-23.643985, -46.875494]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.643985,-46.875494' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_bdcaa47ec22e2fb9493ea38749cac1eb.setContent(html_de4db6f7409b8834ffa6dbbe79238b9e);
+            
+        
+
+        marker_b8381a5814c96c22e2f30845af315679.bindPopup(popup_bdcaa47ec22e2fb9493ea38749cac1eb)
+        ;
+
+        
+    
+    
+            var marker_99b6a3b0eccb88d846f55ca4c5996f83 = L.marker(
+                [-23.638721, -46.897396],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_f148e688357db8d56c3a50a5108dcda3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8122ea22eced905ac194da55df962458 = $(`<div id="html_8122ea22eced905ac194da55df962458" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 05:59:34 - Velocidade: 12 km/h - LatLong: [-23.638721, -46.897396]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.638721,-46.897396' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_f148e688357db8d56c3a50a5108dcda3.setContent(html_8122ea22eced905ac194da55df962458);
+            
+        
+
+        marker_99b6a3b0eccb88d846f55ca4c5996f83.bindPopup(popup_f148e688357db8d56c3a50a5108dcda3)
+        ;
+
+        
+    
+    
+            var marker_5746da87bf5d435dd6d291cbca09f315 = L.marker(
+                [-23.616503, -46.913126],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_e3a82dccf06ae7ce0590ec3e7a811d84 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_86f85003733c0e001da4303288749eea = $(`<div id="html_86f85003733c0e001da4303288749eea" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 06:05:24 - Velocidade: 32 km/h - LatLong: [-23.616503, -46.913126]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.616503,-46.913126' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_e3a82dccf06ae7ce0590ec3e7a811d84.setContent(html_86f85003733c0e001da4303288749eea);
+            
+        
+
+        marker_5746da87bf5d435dd6d291cbca09f315.bindPopup(popup_e3a82dccf06ae7ce0590ec3e7a811d84)
+        ;
+
+        
+    
+    
+            var marker_544761dafa30d1989ac8989477b415b3 = L.marker(
+                [-23.605989, -46.92637],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_752afc630bb5413291bac15cd5222c13 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7076fb57cdcded67ac8968c19881debd = $(`<div id="html_7076fb57cdcded67ac8968c19881debd" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 06:09:54 - Velocidade: 10 km/h - LatLong: [-23.605989, -46.92637]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.605989,-46.92637' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_752afc630bb5413291bac15cd5222c13.setContent(html_7076fb57cdcded67ac8968c19881debd);
+            
+        
+
+        marker_544761dafa30d1989ac8989477b415b3.bindPopup(popup_752afc630bb5413291bac15cd5222c13)
+        ;
+
+        
+    
+    
+            var marker_f43a6b51c915e69eddd509384aa02dc7 = L.marker(
+                [-23.60698, -46.949706],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_c7e8e8686438aedca8b85e2ee56f29cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_587c3e9a5ad8c40cb37047de49b5e8e5 = $(`<div id="html_587c3e9a5ad8c40cb37047de49b5e8e5" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 06:14:51 - Velocidade: 8 km/h - LatLong: [-23.60698, -46.949706]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.60698,-46.949706' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_c7e8e8686438aedca8b85e2ee56f29cd.setContent(html_587c3e9a5ad8c40cb37047de49b5e8e5);
+            
+        
+
+        marker_f43a6b51c915e69eddd509384aa02dc7.bindPopup(popup_c7e8e8686438aedca8b85e2ee56f29cd)
+        ;
+
+        
+    
+    
+            var marker_4e7f23b62e9036affb1085502fae9fdf = L.marker(
+                [-23.611305, -46.950391],
+                {}
+            ).addTo(map_27bf496319ae51166bbd8b02a7ab631f);
+        
+    
+        var popup_1c1442b5b9e0ffbaf3b196f06c73cc2a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6fabe892ec04349f119114222374403a = $(`<div id="html_6fabe892ec04349f119114222374403a" style="width: 100.0%; height: 100.0%;">SIS9H08 - 19/12/2023 06:28:59 - Velocidade: 0 km/h - LatLong: [-23.611305, -46.950391]<br><a href='https://www.google.com/maps/search/?api=1&query=-23.611305,-46.950391' target='_blank'>Ver no Google Maps</a></div>`)[0];
+                popup_1c1442b5b9e0ffbaf3b196f06c73cc2a.setContent(html_6fabe892ec04349f119114222374403a);
+            
+        
+
+        marker_4e7f23b62e9036affb1085502fae9fdf.bindPopup(popup_1c1442b5b9e0ffbaf3b196f06c73cc2a)
+        ;
+
+        
+    
+</script>
+</html>
